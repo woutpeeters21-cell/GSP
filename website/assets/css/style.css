@@ -460,7 +460,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 /* ---------- Lange woorden (bv. VOORTGANGSGRAFIEKEN) netjes afbreken ---------- */
-.titel, .hero__titel, .kaart__titel, .functie__titel { hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word; }
+.titel, .hero__titel, .kaart__titel { hyphens: manual; overflow-wrap: break-word; }
+.functie__titel { hyphens: auto; -webkit-hyphens: auto; overflow-wrap: break-word; }
 .split > *, .functie, .kaart { min-width: 0; }
 .functie__titel { font-size: clamp(1.05rem, 1rem + .3vw, 1.2rem); }
 .ph-ring-card > div:last-child { display: flex; flex-direction: column; }
+.split .titel { font-size: clamp(2.2rem, 1.2rem + 3vw, 3.6rem); }

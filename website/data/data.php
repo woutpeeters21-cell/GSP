@@ -27,11 +27,11 @@ $navigatie = [
  * Zet je foto's in website/assets/img/ met de naam uit 'src' (bv. hero.jpg).
  */
 $fotos = [
-    'hero'     => ['src' => 'assets/img/hero.jpg', 'alt' => 'Sporter traint met gewichten in een donkere gym', 'zoek' => 'hero.jpg · Unsplash: dark gym workout'],
+    'hero'     => ['src' => 'assets/img/hero.jpg', 'alt' => 'Sporter in een donkere gym klaar voor een deadlift', 'zoek' => 'hero.jpg · Unsplash: dark gym workout'],
     'wat'      => ['src' => 'assets/img/wat.jpg', 'alt' => 'Sporter controleert zijn training', 'zoek' => 'wat.jpg · Unsplash: woman workout phone'],
-    'training' => ['src' => 'assets/img/training.jpg', 'alt' => 'Krachttraining met halters', 'zoek' => 'training.jpg · Pexels: dumbbell training'],
-    'voeding'  => ['src' => 'assets/img/voeding.jpg', 'alt' => 'Gezonde maaltijd in een kom', 'zoek' => 'voeding.jpg · Unsplash: healthy meal bowl'],
-    'voortgang'=> ['src' => 'assets/img/voortgang.jpg', 'alt' => 'Sporter na een zware set', 'zoek' => 'voortgang.jpg · Pixabay: gym progress'],
+    'training' => ['src' => 'assets/img/training.jpg', 'alt' => 'Sporter met twee dumbbells in een industriële gym', 'zoek' => 'training.jpg · Pexels: dumbbell training'],
+    'voeding'  => ['src' => 'assets/img/voeding.jpg', 'alt' => 'Kipspiesjes op rijst in een witte schaal', 'zoek' => 'voeding.jpg · Unsplash: healthy meal bowl'],
+    'voortgang'=> ['src' => 'assets/img/voortgang.jpg', 'alt' => 'Kettlebell van 50 lbs op de vloer van een gym', 'zoek' => 'voortgang.jpg · Pixabay: gym progress'],
     'over'     => ['src' => 'assets/img/over.jpg', 'alt' => 'Training in de sportzaal', 'zoek' => 'over.jpg · Unsplash: gym training'],
     'cta'      => ['src' => 'assets/img/cta.jpg', 'alt' => 'Sporter klaar om te starten', 'zoek' => 'cta.jpg · Pexels: athlete gym'],
 ];
