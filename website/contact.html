@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – AutoVerkoop</title>
+  <meta name="description" content="Contacteer AutoVerkoop in Beveren-Waas.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR (zelfde op elke pagina) ========== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="AutoVerkoop – naar de startpagina">
+        <img src="img/logo.svg" alt="" width="42" height="42">
+        <span class="logo-text">
+          <span class="logo-name">AUTOVERKOOP</span>
+          <span class="logo-slogan">DE BESTE PRIJZEN</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Hoofdmenu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aanbod.html">Aanbod</a></li>
+          <li><a href="verkopen.html">Verkopen</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="favorieten.html" class="icon-btn" aria-label="Mijn favorieten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="fav-count" hidden>0</span>
+        </a>
+        <div class="nav-auth">
+          <a href="inloggen.html" class="btn btn--primary btn--small nav-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span class="nav-btn-text">Inloggen</span></a>
+        </div>
+        <button type="button" class="hamburger" aria-expanded="false" aria-controls="navMenu" aria-label="Menu openen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-head">
+      <h1>Contact</h1>
+      <p class="muted">Heb je een vraag? We antwoorden binnen één werkdag.</p>
+    </div>
+
+    <div class="container contact-layout">
+      <form class="card" id="contactForm" novalidate>
+        <h2>Stuur ons een bericht</h2>
+        <div class="form-grid form-grid--2">
+          <div class="field">
+            <label for="c-naam">Naam <span class="required">*</span></label>
+            <input type="text" id="c-naam" name="naam" autocomplete="name" required>
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="c-email">E-mail <span class="required">*</span></label>
+            <input type="email" id="c-email" name="email" autocomplete="email" required>
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="c-telefoon">Telefoon</label>
+            <input type="tel" id="c-telefoon" name="telefoon" autocomplete="tel">
+            <span class="error-msg"></span>
+          </div>
+          <div class="field">
+            <label for="c-onderwerp">Onderwerp <span class="required">*</span></label>
+            <select id="c-onderwerp" name="onderwerp" required>
+              <option value="">Kies een onderwerp</option>
+              <option>Auto kopen</option>
+              <option>Auto verkopen</option>
+              <option>Financiering</option>
+              <option>Andere</option>
+            </select>
+            <span class="error-msg"></span>
+          </div>
+          <div class="field field--full">
+            <label for="c-bericht">Bericht <span class="required">*</span></label>
+            <textarea id="c-bericht" name="bericht" required></textarea>
+            <span class="error-msg"></span>
+          </div>
+        </div>
+        <div class="form-success mt" id="contactSuccess" role="status" hidden>Bedankt! Je bericht is verzonden. We nemen snel contact met je op.</div>
+        <button type="submit" class="btn btn--primary mt">Verzenden</button>
+      </form>
+
+      <aside class="card contact-info">
+        <h2>Onze gegevens</h2>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Straatnaam 1<br>9120 Beveren-Waas</span></div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+3231234567">03 123 45 67</a></div>
+        <div class="contact-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:info@autoverkoop.be">info@autoverkoop.be</a></div>
+        <h3 class="mt">Openingsuren</h3>
+        <table class="hours" id="hours">
+          <tbody>
+            <tr data-day="1"><td>Maandag</td><td>9:00 – 18:00</td></tr>
+            <tr data-day="2"><td>Dinsdag</td><td>9:00 – 18:00</td></tr>
+            <tr data-day="3"><td>Woensdag</td><td>9:00 – 18:00</td></tr>
+            <tr data-day="4"><td>Donderdag</td><td>9:00 – 18:00</td></tr>
+            <tr data-day="5"><td>Vrijdag</td><td>9:00 – 18:00</td></tr>
+            <tr data-day="6"><td>Zaterdag</td><td>10:00 – 16:00</td></tr>
+            <tr data-day="0"><td>Zondag</td><td>Gesloten</td></tr>
+          </tbody>
+        </table>
+      </aside>
+    </div>
+
+    <div class="container contact-map">
+      <iframe class="map" title="Kaart van Beveren-Waas" loading="lazy"
+        src="https://www.google.com/maps?q=Beveren-Waas&amp;z=13&amp;output=embed"></iframe>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER (zelfde op elke pagina) ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="" width="42" height="42">
+            <span class="logo-text">
+              <span class="logo-name">AUTOVERKOOP</span>
+              <span class="logo-slogan">DE BESTE PRIJZEN</span>
+            </span>
+          </a>
+          <p class="footer-text">Jouw adres voor gekeurde tweedehandswagens in het Waasland.</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aanbod.html">Aanbod</a></li>
+            <li><a href="verkopen.html">Verkopen</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Straatnaam 1, 9120 Beveren-Waas</li>
+            <li><a href="tel:+3231234567">03 123 45 67</a></li>
+            <li><a href="mailto:info@autoverkoop.be">info@autoverkoop.be</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; GTI Beveren 2026-2027 – Portfolioproject</span>
+        <span>Foto's: Pexels &amp; Pixabay</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cars.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

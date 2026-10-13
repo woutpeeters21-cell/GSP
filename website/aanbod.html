@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aanbod – AutoVerkoop</title>
+  <meta name="description" content="Bekijk alle tweedehandswagens en zoek met uitgebreide filters.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR (zelfde op elke pagina) ========== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="AutoVerkoop – naar de startpagina">
+        <img src="img/logo.svg" alt="" width="42" height="42">
+        <span class="logo-text">
+          <span class="logo-name">AUTOVERKOOP</span>
+          <span class="logo-slogan">DE BESTE PRIJZEN</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Hoofdmenu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aanbod.html" class="active" aria-current="page">Aanbod</a></li>
+          <li><a href="verkopen.html">Verkopen</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="favorieten.html" class="icon-btn" aria-label="Mijn favorieten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="fav-count" hidden>0</span>
+        </a>
+        <div class="nav-auth">
+          <a href="inloggen.html" class="btn btn--primary btn--small nav-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span class="nav-btn-text">Inloggen</span></a>
+        </div>
+        <button type="button" class="hamburger" aria-expanded="false" aria-controls="navMenu" aria-label="Menu openen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-head">
+      <h1>Ons aanbod</h1>
+      <p class="muted">Vind je volgende auto met meer dan 45 filters.</p>
+    </div>
+
+    <div class="container shop">
+      <button type="button" class="btn btn--secondary filter-open-btn" id="openFilters" aria-controls="filterPanel" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><path d="M22 3H2l8 9.5V19l4 2v-8.5L22 3z"/></svg> Filters <span id="filterCount"></span>
+      </button>
+
+      <!-- ========== FILTERPANEEL ========== -->
+      <aside class="filter-panel" id="filterPanel" aria-label="Filters">
+        <div class="filter-panel__head">
+          <h2>Filters</h2>
+          <button type="button" class="link-btn" id="resetFilters">Alle filters wissen</button>
+          <button type="button" class="icon-btn filter-panel__close" id="closeFilters" aria-label="Filters sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+        <div class="filter-panel__scroll">
+          <form id="filterForm">
+            <details class="filter-group" open>
+              <summary>Zoeken</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-q">Zoekwoord</label>
+                <input type="search" id="f-q" name="q" placeholder="bv. Golf, M Sport, trekhaak">
+              </div>
+            </details>
+            <details class="filter-group" open>
+              <summary>Merk &amp; model</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-merk">Merk</label>
+                <select id="f-merk" name="merk"><option value="">Alle merken</option></select>
+                <label class="sr-only" for="f-model">Model</label>
+                <select id="f-model" name="model" disabled><option value="">Alle modellen</option></select>
+                <label class="sr-only" for="f-versie">Modelversie</label>
+                <input type="text" id="f-versie" name="versie" placeholder="Modelversie, bv. S line">
+              </div>
+            </details>
+            <details class="filter-group" open>
+              <summary>Prijs</summary>
+              <div class="filter-group__body">
+                <div class="range-row">
+                  <label class="sr-only" for="f-prijsVan">Prijs vanaf</label>
+                  <select id="f-prijsVan" name="prijsVan" data-steps="prijs" data-first="Van"></select>
+                  <label class="sr-only" for="f-prijsTot">Prijs tot</label>
+                  <select id="f-prijsTot" name="prijsTot" data-steps="prijs" data-first="Tot"></select>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group" open>
+              <summary>Eerste inschrijving</summary>
+              <div class="filter-group__body">
+                <div class="range-row">
+                  <label class="sr-only" for="f-jaarVan">Bouwjaar vanaf</label>
+                  <select id="f-jaarVan" name="jaarVan" data-steps="jaar" data-first="Van"></select>
+                  <label class="sr-only" for="f-jaarTot">Bouwjaar tot</label>
+                  <select id="f-jaarTot" name="jaarTot" data-steps="jaar" data-first="Tot"></select>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group" open>
+              <summary>Kilometerstand</summary>
+              <div class="filter-group__body">
+                <div class="range-row">
+                  <label class="sr-only" for="f-kmVan">Kilometerstand vanaf</label>
+                  <select id="f-kmVan" name="kmVan" data-steps="km" data-first="Van"></select>
+                  <label class="sr-only" for="f-kmTot">Kilometerstand tot</label>
+                  <select id="f-kmTot" name="kmTot" data-steps="km" data-first="Tot"></select>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group" open>
+              <summary>Carrosserie</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="carrosserie" data-options="carrosserieTypes" role="group" aria-label="Carrosserie"></div>
+              </div>
+            </details>
+            <details class="filter-group" open>
+              <summary>Brandstof</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="brandstof" data-options="brandstoffen" role="group" aria-label="Brandstof"></div>
+              </div>
+            </details>
+            <details class="filter-group" open>
+              <summary>Transmissie</summary>
+              <div class="filter-group__body">
+                <div class="seg" role="radiogroup" aria-label="Transmissie">
+                  <label><input type="radio" name="transmissie" value="" checked><span>Alle</span></label>
+                  <label><input type="radio" name="transmissie" value="Automatisch"><span>Automatisch</span></label>
+                  <label><input type="radio" name="transmissie" value="Handgeschakeld"><span>Handgeschakeld</span></label>
+                  <label><input type="radio" name="transmissie" value="Halfautomatisch"><span>Halfautomatisch</span></label>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Locatie</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-postcode">Postcode</label>
+                <input type="text" id="f-postcode" name="postcode" inputmode="numeric" maxlength="5" placeholder="Postcode, bv. 9120">
+                <label class="sr-only" for="f-straal">Straal</label>
+                <select id="f-straal" name="straal">
+                  <option value="">Heel België</option>
+                  <option value="10">Binnen 10 km</option>
+                  <option value="20">Binnen 20 km</option>
+                  <option value="50">Binnen 50 km</option>
+                  <option value="100">Binnen 100 km</option>
+                  <option value="200">Binnen 200 km</option>
+                </select>
+                <p class="filter-hint" id="postcodeHint">Vul een postcode én een straal in.</p>
+                <label class="sr-only" for="f-land">Land</label>
+                <select id="f-land" name="land" data-list="landen" data-first="Alle landen"></select>
+              </div>
+            </details>
+
+            <p class="filter-section-title">Voertuig</p>
+            <details class="filter-group">
+              <summary>Staat</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="staat" data-options="staten" role="group" aria-label="Staat"></div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Vermogen</summary>
+              <div class="filter-group__body">
+                <div class="seg" role="radiogroup" aria-label="Eenheid">
+                  <label><input type="radio" name="eenheid" value="pk" checked><span>pk</span></label>
+                  <label><input type="radio" name="eenheid" value="kw"><span>kW</span></label>
+                </div>
+                <div class="range-row">
+                  <label class="sr-only" for="f-vermogenVan">Vermogen vanaf</label>
+                  <select id="f-vermogenVan" name="vermogenVan" data-steps="vermogen" data-first="Van"></select>
+                  <label class="sr-only" for="f-vermogenTot">Vermogen tot</label>
+                  <select id="f-vermogenTot" name="vermogenTot" data-steps="vermogen" data-first="Tot"></select>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Aantal deuren</summary>
+              <div class="filter-group__body">
+                <div class="seg" role="radiogroup" aria-label="Aantal deuren">
+                  <label><input type="radio" name="deuren" value="" checked><span>Alle</span></label>
+                  <label><input type="radio" name="deuren" value="2/3"><span>2/3</span></label>
+                  <label><input type="radio" name="deuren" value="4/5"><span>4/5</span></label>
+                  <label><input type="radio" name="deuren" value="6/7"><span>6/7</span></label>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Zitplaatsen</summary>
+              <div class="filter-group__body">
+                <div class="range-row">
+                  <label class="sr-only" for="f-zitVan">Zitplaatsen vanaf</label>
+                  <select id="f-zitVan" name="zitVan" data-steps="zit" data-first="Van"></select>
+                  <label class="sr-only" for="f-zitTot">Zitplaatsen tot</label>
+                  <select id="f-zitTot" name="zitTot" data-steps="zit" data-first="Tot"></select>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Aandrijving</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="aandrijving" data-options="aandrijvingen" role="group" aria-label="Aandrijving"></div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Cilinderinhoud</summary>
+              <div class="filter-group__body">
+                <div class="range-row">
+                  <label class="sr-only" for="f-ccVan">Cilinderinhoud vanaf</label>
+                  <select id="f-ccVan" name="ccVan" data-steps="cc" data-first="Van"></select>
+                  <label class="sr-only" for="f-ccTot">Cilinderinhoud tot</label>
+                  <select id="f-ccTot" name="ccTot" data-steps="cc" data-first="Tot"></select>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Aantal cilinders</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-cilinders">Aantal cilinders</label>
+                <select id="f-cilinders" name="cilinders" data-steps="cilinders" data-first="Alle"></select>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Leeggewicht</summary>
+              <div class="filter-group__body">
+                <div class="range-row">
+                  <label class="sr-only" for="f-gewichtVan">Leeggewicht vanaf</label>
+                  <select id="f-gewichtVan" name="gewichtVan" data-steps="gewicht" data-first="Van"></select>
+                  <label class="sr-only" for="f-gewichtTot">Leeggewicht tot</label>
+                  <select id="f-gewichtTot" name="gewichtTot" data-steps="gewicht" data-first="Tot"></select>
+                </div>
+              </div>
+            </details>
+            <p class="filter-section-title">Exterieur &amp; interieur</p>
+            <details class="filter-group">
+              <summary>Kleur exterieur</summary>
+              <div class="filter-group__body">
+                <div class="color-dots" data-name="kleur" role="group" aria-label="Kleur exterieur"></div>
+                <div class="check-list">
+                  <label><input type="checkbox" name="metaal" value="1"> Enkel metaalkleur</label>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Kleur interieur</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="interieur" data-options="interieurKleuren" role="group" aria-label="Kleur interieur"></div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Bekleding</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="bekleding" data-options="bekledingen" role="group" aria-label="Bekleding"></div>
+              </div>
+            </details>
+            <p class="filter-section-title">Uitrusting</p>
+            <details class="filter-group">
+              <summary>Comfort</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="uitrusting" data-equip="Comfort" role="group" aria-label="Uitrusting Comfort"></div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Veiligheid</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="uitrusting" data-equip="Veiligheid" role="group" aria-label="Uitrusting Veiligheid"></div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Multimedia</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="uitrusting" data-equip="Multimedia" role="group" aria-label="Uitrusting Multimedia"></div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Extra</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="uitrusting" data-equip="Extra" role="group" aria-label="Uitrusting Extra"></div>
+              </div>
+            </details>
+            <p class="filter-section-title">Milieu &amp; verbruik</p>
+            <details class="filter-group">
+              <summary>Emissieklasse</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-euro">Minimale emissieklasse</label>
+                <select id="f-euro" name="euro" data-list="emissieklassen" data-first="Alle" data-prefix="Minimaal "></select>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>CO₂-uitstoot</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-co2Tot">Maximale CO2-uitstoot</label>
+                <select id="f-co2Tot" name="co2Tot" data-steps="co2" data-first="Geen maximum"></select>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Verbruik</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-verbruikTot">Maximaal verbruik</label>
+                <select id="f-verbruikTot" name="verbruikTot" data-steps="verbruik" data-first="Geen maximum"></select>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Lage-emissiezone</summary>
+              <div class="filter-group__body">
+                <div class="check-list">
+                  <label><input type="checkbox" name="lez" value="1"> Toegelaten in de LEZ (Antwerpen, Gent, Brussel)</label>
+                </div>
+                <p class="filter-hint">Vereenvoudigde regel: diesel vanaf Euro 6, benzine/LPG/CNG vanaf Euro 3, elektrisch en waterstof altijd.</p>
+              </div>
+            </details>
+            <details class="filter-group" id="groupElektrisch">
+              <summary>Elektrisch</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-actieradius">Minimale actieradius</label>
+                <select id="f-actieradius" name="actieradius" data-steps="range" data-first="Elke actieradius"></select>
+                <label class="sr-only" for="f-batterij">Minimale batterijcapaciteit</label>
+                <select id="f-batterij" name="batterij" data-steps="batterij" data-first="Elke batterij"></select>
+                <div class="check-list">
+                  <label><input type="checkbox" name="snelladen" value="1"> Ondersteunt DC-snelladen</label>
+                </div>
+              </div>
+            </details>
+            <p class="filter-section-title">Historiek &amp; staat</p>
+            <details class="filter-group">
+              <summary>Vorige eigenaars</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-eigenaars">Maximaal aantal vorige eigenaars</label>
+                <select id="f-eigenaars" name="eigenaars">
+                  <option value="">Maakt niet uit</option>
+                  <option value="1">Max. 1 eigenaar</option>
+                  <option value="2">Max. 2 eigenaars</option>
+                  <option value="3">Max. 3 eigenaars</option>
+                </select>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Historiek</summary>
+              <div class="filter-group__body">
+                <div class="check-list">
+                  <label><input type="checkbox" name="boekje" value="1"> Volledige onderhoudshistoriek</label>
+                  <label><input type="checkbox" name="nietRoker" value="1"> Niet-rokerswagen</label>
+                  <label><input type="checkbox" name="ongevalvrij" value="1"> Ongevalvrij</label>
+                  <label><input type="checkbox" name="carPass" value="1"> Car-Pass aanwezig</label>
+                  <label><input type="checkbox" name="gekeurd" value="1"> Gekeurd voor verkoop</label>
+                  <label><input type="checkbox" name="garantie" value="1"> Met garantie</label>
+                </div>
+              </div>
+            </details>
+            <p class="filter-section-title">Aanbieder &amp; advertentie</p>
+            <details class="filter-group">
+              <summary>Aanbieder</summary>
+              <div class="filter-group__body">
+                <div class="seg" role="radiogroup" aria-label="Aanbieder">
+                  <label><input type="radio" name="aanbieder" value="" checked><span>Alle</span></label>
+                  <label><input type="radio" name="aanbieder" value="Handelaar"><span>Handelaar</span></label>
+                  <label><input type="radio" name="aanbieder" value="Particulier"><span>Particulier</span></label>
+                </div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Online sinds</summary>
+              <div class="filter-group__body">
+                <label class="sr-only" for="f-online">Online sinds</label>
+                <select id="f-online" name="online">
+                  <option value="">Altijd</option>
+                  <option value="1">1 dag</option>
+                  <option value="3">3 dagen</option>
+                  <option value="7">7 dagen</option>
+                  <option value="14">14 dagen</option>
+                  <option value="30">30 dagen</option>
+                </select>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Prijsbeoordeling</summary>
+              <div class="filter-group__body">
+                <div class="check-list" data-name="beoordeling" data-options="prijsBeoordelingen" role="group" aria-label="Prijsbeoordeling"></div>
+              </div>
+            </details>
+            <details class="filter-group">
+              <summary>Extra</summary>
+              <div class="filter-group__body">
+                <div class="check-list">
+                  <label><input type="checkbox" name="btw" value="1"> Btw aftrekbaar</label>
+                  <label><input type="checkbox" name="financiering" value="1"> Leasing / financiering mogelijk</label>
+                  <label><input type="checkbox" name="metFotos" value="1"> Met foto's</label>
+                  <label><input type="checkbox" name="metVideo" value="1"> Met video</label>
+                </div>
+              </div>
+            </details>
+          </form>
+        </div>
+        <div class="filter-panel__foot">
+          <button type="button" class="btn btn--primary btn--block" id="showResults">Toon resultaten</button>
+        </div>
+      </aside>
+
+      <!-- ========== RESULTATEN ========== -->
+      <section aria-labelledby="resultTitle">
+        <div class="results-head">
+          <h2 id="resultTitle"><strong id="resultCount">0</strong> auto's gevonden</h2>
+          <div class="results-tools">
+            <label class="sr-only" for="sortSelect">Sorteren</label>
+            <select id="sortSelect" name="sort" form="filterForm">
+              <option value="">Nieuwste advertenties</option>
+              <option value="prijs-op">Prijs: laag → hoog</option>
+              <option value="prijs-af">Prijs: hoog → laag</option>
+              <option value="km-op">Kilometerstand: laag → hoog</option>
+              <option value="jaar-af">Bouwjaar: nieuw → oud</option>
+              <option value="jaar-op">Bouwjaar: oud → nieuw</option>
+              <option value="pk-af">Vermogen: hoog → laag</option>
+              <option value="verbruik-op">Verbruik: laag → hoog</option>
+            </select>
+            <button type="button" class="icon-btn view-btn active" id="viewGrid" aria-label="Roosterweergave" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
+            <button type="button" class="icon-btn view-btn" id="viewList" aria-label="Lijstweergave" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></button>
+          </div>
+        </div>
+
+        <div class="chips results-chips" id="activeChips"></div>
+
+        <div class="car-grid car-grid--3" id="carList"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8.5 8.5l5 5M13.5 8.5l-5 5"/></svg>
+          <h3>Geen auto's gevonden met deze filters.</h3>
+          <p class="muted">Probeer minder filters of een ruimere prijs.</p>
+          <button type="button" class="btn btn--primary" id="emptyReset">Filters wissen</button>
+        </div>
+
+        <nav class="pagination" id="pagination" aria-label="Pagina's"></nav>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== FOOTER (zelfde op elke pagina) ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="" width="42" height="42">
+            <span class="logo-text">
+              <span class="logo-name">AUTOVERKOOP</span>
+              <span class="logo-slogan">DE BESTE PRIJZEN</span>
+            </span>
+          </a>
+          <p class="footer-text">Jouw adres voor gekeurde tweedehandswagens in het Waasland.</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aanbod.html">Aanbod</a></li>
+            <li><a href="verkopen.html">Verkopen</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Straatnaam 1, 9120 Beveren-Waas</li>
+            <li><a href="tel:+3231234567">03 123 45 67</a></li>
+            <li><a href="mailto:info@autoverkoop.be">info@autoverkoop.be</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; GTI Beveren 2026-2027 – Portfolioproject</span>
+        <span>Foto's: Pexels &amp; Pixabay</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cars.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/filters.js"></script>
+</body>
+</html>

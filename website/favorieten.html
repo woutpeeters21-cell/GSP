@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorieten – AutoVerkoop</title>
+  <meta name="description" content="Je bewaarde auto's.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR (zelfde op elke pagina) ========== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="AutoVerkoop – naar de startpagina">
+        <img src="img/logo.svg" alt="" width="42" height="42">
+        <span class="logo-text">
+          <span class="logo-name">AUTOVERKOOP</span>
+          <span class="logo-slogan">DE BESTE PRIJZEN</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Hoofdmenu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aanbod.html">Aanbod</a></li>
+          <li><a href="verkopen.html">Verkopen</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="favorieten.html" class="icon-btn" aria-label="Mijn favorieten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="fav-count" hidden>0</span>
+        </a>
+        <div class="nav-auth">
+          <a href="inloggen.html" class="btn btn--primary btn--small nav-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span class="nav-btn-text">Inloggen</span></a>
+        </div>
+        <button type="button" class="hamburger" aria-expanded="false" aria-controls="navMenu" aria-label="Menu openen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-head">
+      <h1>Mijn favorieten</h1>
+      <p class="muted">Auto's die je bewaard hebt.</p>
+    </div>
+    <div class="container section-bottom" id="favContent"></div>
+  </main>
+
+  <!-- ========== FOOTER (zelfde op elke pagina) ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="" width="42" height="42">
+            <span class="logo-text">
+              <span class="logo-name">AUTOVERKOOP</span>
+              <span class="logo-slogan">DE BESTE PRIJZEN</span>
+            </span>
+          </a>
+          <p class="footer-text">Jouw adres voor gekeurde tweedehandswagens in het Waasland.</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aanbod.html">Aanbod</a></li>
+            <li><a href="verkopen.html">Verkopen</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Straatnaam 1, 9120 Beveren-Waas</li>
+            <li><a href="tel:+3231234567">03 123 45 67</a></li>
+            <li><a href="mailto:info@autoverkoop.be">info@autoverkoop.be</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; GTI Beveren 2026-2027 – Portfolioproject</span>
+        <span>Foto's: Pexels &amp; Pixabay</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cars.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/favorites.js"></script>
+</body>
+</html>

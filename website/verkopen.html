@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verkopen – AutoVerkoop</title>
+  <meta name="description" content="Zet je auto gratis te koop in 4 eenvoudige stappen.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR (zelfde op elke pagina) ========== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="AutoVerkoop – naar de startpagina">
+        <img src="img/logo.svg" alt="" width="42" height="42">
+        <span class="logo-text">
+          <span class="logo-name">AUTOVERKOOP</span>
+          <span class="logo-slogan">DE BESTE PRIJZEN</span>
+        </span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Hoofdmenu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aanbod.html">Aanbod</a></li>
+          <li><a href="verkopen.html" class="active" aria-current="page">Verkopen</a></li>
+          <li><a href="over-ons.html">Over ons</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="favorieten.html" class="icon-btn" aria-label="Mijn favorieten">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+          <span class="fav-count" hidden>0</span>
+        </a>
+        <div class="nav-auth">
+          <a href="inloggen.html" class="btn btn--primary btn--small nav-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span class="nav-btn-text">Inloggen</span></a>
+        </div>
+        <button type="button" class="hamburger" aria-expanded="false" aria-controls="navMenu" aria-label="Menu openen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero--small" data-site-foto="heroVerkopen">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Verkoop je auto <span>snel en gratis</span></h1>
+          <p class="hero-lead">Vul het formulier in 4 stappen in. Je advertentie staat meteen online.</p>
+          <ul class="benefits">
+            <li>100% gratis</li>
+            <li>Klaar in 5 minuten</li>
+            <li>Duizenden kopers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container sell-layout">
+        <form class="card" id="sellForm" novalidate>
+          <ol class="stepper" id="stepper">
+            <li class="current"><span>Stap 1</span><span class="step-name">Auto</span></li>
+            <li><span>Stap 2</span><span class="step-name">Details</span></li>
+            <li><span>Stap 3</span><span class="step-name">Foto's &amp; prijs</span></li>
+            <li><span>Stap 4</span><span class="step-name">Contact</span></li>
+          </ol>
+
+          <!-- STAP 1 -->
+          <div class="step-panel" data-step="1">
+            <h2>Over je auto</h2>
+            <div class="form-grid form-grid--3">
+              <div class="field">
+                <label for="s-merk">Merk <span class="required">*</span></label>
+                <select id="s-merk" name="merk" data-list="verkoopMerken" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-model">Model <span class="required">*</span></label>
+                <input type="text" id="s-model" name="model" required list="modelSuggestions" placeholder="bv. Golf" autocomplete="off">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-versie">Versie</label>
+                <input type="text" id="s-versie" name="versie" placeholder="bv. 1.5 TSI Life">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-inschrijvingMaand">Maand eerste inschrijving <span class="required">*</span></label>
+                <select id="s-inschrijvingMaand" name="inschrijvingMaand" required>
+                  <option value="">Kies...</option>
+                  <option value="1">januari</option>
+                  <option value="2">februari</option>
+                  <option value="3">maart</option>
+                  <option value="4">april</option>
+                  <option value="5">mei</option>
+                  <option value="6">juni</option>
+                  <option value="7">juli</option>
+                  <option value="8">augustus</option>
+                  <option value="9">september</option>
+                  <option value="10">oktober</option>
+                  <option value="11">november</option>
+                  <option value="12">december</option>
+                </select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-inschrijvingJaar">Jaar eerste inschrijving <span class="required">*</span></label>
+                <input type="number" id="s-inschrijvingJaar" name="inschrijvingJaar" required min="1950" placeholder="bv. 2020">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-km">Kilometerstand <span class="required">*</span></label>
+                <input type="number" id="s-km" name="km" required min="0" placeholder="bv. 68500">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-brandstof">Brandstof <span class="required">*</span></label>
+                <select id="s-brandstof" name="brandstof" data-list="brandstoffen" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-transmissie">Transmissie <span class="required">*</span></label>
+                <select id="s-transmissie" name="transmissie" data-list="transmissies" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-carrosserie">Carrosserie <span class="required">*</span></label>
+                <select id="s-carrosserie" name="carrosserie" data-list="carrosserieTypes" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+            </div>
+            <datalist id="modelSuggestions"></datalist>
+          </div>
+
+          <!-- STAP 2 -->
+          <div class="step-panel" data-step="2" hidden>
+            <h2>Details</h2>
+            <div class="form-grid form-grid--3">
+              <div class="field">
+                <label for="s-pk">Vermogen (pk) <span class="required">*</span></label>
+                <input type="number" id="s-pk" name="pk" required min="1" placeholder="bv. 130">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-deuren">Aantal deuren <span class="required">*</span></label>
+                <select id="s-deuren" name="deuren" required>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="3">3</option>
+                  <option value="2">2</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-zitplaatsen">Zitplaatsen <span class="required">*</span></label>
+                <select id="s-zitplaatsen" name="zitplaatsen" required>
+                  <option value="5">5</option>
+                  <option value="4">4</option>
+                  <option value="2">2</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                </select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-kleur">Kleur exterieur <span class="required">*</span></label>
+                <select id="s-kleur" name="kleur" data-list="kleuren" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-interieurKleur">Kleur interieur <span class="required">*</span></label>
+                <select id="s-interieurKleur" name="interieurKleur" data-list="interieurKleuren" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-bekleding">Bekleding <span class="required">*</span></label>
+                <select id="s-bekleding" name="bekleding" data-list="bekledingen" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-aandrijving">Aandrijving <span class="required">*</span></label>
+                <select id="s-aandrijving" name="aandrijving" data-list="aandrijvingen" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-emissieklasse">Emissieklasse <span class="required">*</span></label>
+                <select id="s-emissieklasse" name="emissieklasse" data-list="emissieklassen" data-first="Kies..." required></select>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-vorigeEigenaars">Vorige eigenaars <span class="required">*</span></label>
+                <input type="number" id="s-vorigeEigenaars" name="vorigeEigenaars" required min="0" max="9" value="1">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-cilinderinhoud">Cilinderinhoud (cm³)</label>
+                <input type="number" id="s-cilinderinhoud" name="cilinderinhoud" min="0" placeholder="bv. 1498">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-verbruik">Verbruik (l/100 km)</label>
+                <input type="number" id="s-verbruik" name="verbruik" min="0" step="0.1" placeholder="bv. 5.4">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-co2">CO₂-uitstoot (g/km)</label>
+                <input type="number" id="s-co2" name="co2" min="0" placeholder="bv. 125">
+                <span class="error-msg"></span>
+              </div>
+            </div>
+            <fieldset class="check-fieldset mt">
+              <legend>Staat</legend>
+              <div class="check-grid">
+                <label class="check"><input type="checkbox" name="metaalkleur"> Metaalkleur</label>
+                <label class="check"><input type="checkbox" name="onderhoudsboekje" checked> Onderhoudsboekje</label>
+                <label class="check"><input type="checkbox" name="ongevalvrij" checked> Ongevalvrij</label>
+                <label class="check"><input type="checkbox" name="nietRoker" checked> Niet-rokerswagen</label>
+                <label class="check"><input type="checkbox" name="carPass" checked> Car-Pass aanwezig</label>
+                <label class="check"><input type="checkbox" name="gekeurd" checked> Gekeurd voor verkoop</label>
+              </div>
+            </fieldset>
+            <h3 class="mt">Uitrusting</h3>
+            <div class="equip-checks" id="sellEquipment"></div>
+          </div>
+
+          <!-- STAP 3 -->
+          <div class="step-panel" data-step="3" hidden>
+            <h2>Foto's &amp; prijs</h2>
+            <p class="muted">Plak 1 tot 5 links naar foto's (rechtsklik op een foto op Pexels of Pixabay &gt; "Afbeeldingsadres kopiëren").</p>
+            <div class="photo-inputs" id="photoInputs"></div>
+            <div class="form-grid form-grid--2 mt">
+              <div class="field">
+                <label for="s-prijs">Vraagprijs (€) <span class="required">*</span></label>
+                <input type="number" id="s-prijs" name="prijs" min="1" placeholder="bv. 18500" required>
+                <span class="error-msg"></span>
+              </div>
+              <div class="field field--full">
+                <label for="s-omschrijving">Omschrijving</label>
+                <textarea id="s-omschrijving" name="omschrijving" maxlength="1000" placeholder="Vertel iets over je auto: onderhoud, opties, waarom je verkoopt..."></textarea>
+                <span class="char-count" id="charCount">0 / 1000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STAP 4 -->
+          <div class="step-panel" data-step="4" hidden>
+            <h2>Jouw gegevens</h2>
+            <div class="form-grid form-grid--2">
+              <div class="field">
+                <label for="s-verkoperNaam">Naam <span class="required">*</span></label>
+                <input type="text" id="s-verkoperNaam" name="verkoperNaam" required autocomplete="name">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-email">E-mail <span class="required">*</span></label>
+                <input type="email" id="s-email" name="email" required autocomplete="email">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-telefoon">Telefoon <span class="required">*</span></label>
+                <input type="tel" id="s-telefoon" name="telefoon" required autocomplete="tel" placeholder="bv. 0470 12 34 56">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-postcode">Postcode <span class="required">*</span></label>
+                <input type="text" id="s-postcode" name="postcode" required inputmode="numeric" maxlength="4" placeholder="bv. 9120">
+                <span class="error-msg"></span>
+              </div>
+              <div class="field">
+                <label for="s-gemeente">Gemeente <span class="required">*</span></label>
+                <input type="text" id="s-gemeente" name="gemeente" required placeholder="bv. Beveren-Waas">
+                <span class="error-msg"></span>
+              </div>
+              <fieldset class="check-fieldset field">
+                <legend class="field-label">Ik ben een</legend>
+                <div class="seg">
+                  <label><input type="radio" name="aanbieder" value="Particulier" checked><span>Particulier</span></label>
+                  <label><input type="radio" name="aanbieder" value="Handelaar"><span>Handelaar</span></label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <!-- OVERZICHT -->
+          <div class="step-panel" data-step="5" hidden>
+            <h2>Klopt alles?</h2>
+            <p class="muted">Controleer je gegevens en plaats je advertentie.</p>
+            <dl class="summary-list" id="summary"></dl>
+          </div>
+
+          <!-- KLAAR -->
+          <div class="step-panel center" data-step="6" hidden>
+            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg></span>
+            <h2>Je advertentie staat online!</h2>
+            <p class="muted">Kopers kunnen je auto nu vinden in ons aanbod.</p>
+            <div class="hero-buttons hero-buttons--center">
+              <a href="#" class="btn btn--primary" id="viewNewAd">Bekijk je advertentie</a>
+              <a href="aanbod.html" class="btn btn--secondary">Naar het aanbod</a>
+            </div>
+          </div>
+
+          <div class="step-buttons" id="stepButtons">
+            <button type="button" class="btn btn--secondary" id="prevStep" hidden>Vorige</button>
+            <button type="button" class="btn btn--primary" id="nextStep">Volgende</button>
+          </div>
+        </form>
+
+        <aside class="card">
+          <h3>Tips voor een snelle verkoop</h3>
+          <ul class="benefits benefits--column">
+            <li>Maak foto's bij daglicht</li>
+            <li>Toon ook het interieur en de kilometerstand</li>
+            <li>Vermeld recente onderhoudsbeurten</li>
+            <li>Kijk in ons aanbod wat vergelijkbare auto's kosten</li>
+          </ul>
+          <p class="demo-note mt">Demo: je advertentie wordt enkel in je eigen browser bewaard (localStorage).</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="myAdsSection" hidden>
+      <div class="container">
+        <div class="section-title">
+          <h2>Mijn advertenties</h2>
+          <p>Advertenties die in deze browser geplaatst zijn.</p>
+        </div>
+        <div class="my-ads" id="myAds"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER (zelfde op elke pagina) ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo">
+            <img src="img/logo.svg" alt="" width="42" height="42">
+            <span class="logo-text">
+              <span class="logo-name">AUTOVERKOOP</span>
+              <span class="logo-slogan">DE BESTE PRIJZEN</span>
+            </span>
+          </a>
+          <p class="footer-text">Jouw adres voor gekeurde tweedehandswagens in het Waasland.</p>
+        </div>
+        <div>
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aanbod.html">Aanbod</a></li>
+            <li><a href="verkopen.html">Verkopen</a></li>
+            <li><a href="over-ons.html">Over ons</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Straatnaam 1, 9120 Beveren-Waas</li>
+            <li><a href="tel:+3231234567">03 123 45 67</a></li>
+            <li><a href="mailto:info@autoverkoop.be">info@autoverkoop.be</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; GTI Beveren 2026-2027 – Portfolioproject</span>
+        <span>Foto's: Pexels &amp; Pixabay</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/cars.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sell.js"></script>
+</body>
+</html>
