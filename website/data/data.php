@@ -24,16 +24,16 @@ $navigatie = [
 /*
  * Foto's: Unsplash / Pexels / Pixabay / Magnific.
  * 'zoek' = de zoekterm die op het grijze vlak verschijnt als een foto niet laadt.
- * Vervang 'src' door je eigen gekozen foto.
+ * Zet je foto's in website/assets/img/ met de naam uit 'src' (bv. hero.jpg).
  */
 $fotos = [
-    'hero'     => ['src' => 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=80', 'alt' => 'Sporter traint met gewichten in een donkere gym', 'zoek' => 'Unsplash: dark gym workout'],
-    'wat'      => ['src' => 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80', 'alt' => 'Sporter controleert zijn training', 'zoek' => 'Unsplash: woman workout phone'],
-    'training' => ['src' => 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=80', 'alt' => 'Krachttraining met halters', 'zoek' => 'Pexels: dumbbell training'],
-    'voeding'  => ['src' => 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80', 'alt' => 'Gezonde maaltijd in een kom', 'zoek' => 'Unsplash: healthy meal bowl'],
-    'voortgang'=> ['src' => 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80', 'alt' => 'Sporter na een zware set', 'zoek' => 'Pixabay: gym progress'],
-    'over'     => ['src' => 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80', 'alt' => 'Training in de sportzaal', 'zoek' => 'Unsplash: gym training'],
-    'cta'      => ['src' => 'https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=2000&q=80', 'alt' => 'Sporter klaar om te starten', 'zoek' => 'Pexels: athlete gym'],
+    'hero'     => ['src' => 'assets/img/hero.jpg', 'alt' => 'Sporter traint met gewichten in een donkere gym', 'zoek' => 'hero.jpg · Unsplash: dark gym workout'],
+    'wat'      => ['src' => 'assets/img/wat.jpg', 'alt' => 'Sporter controleert zijn training', 'zoek' => 'wat.jpg · Unsplash: woman workout phone'],
+    'training' => ['src' => 'assets/img/training.jpg', 'alt' => 'Krachttraining met halters', 'zoek' => 'training.jpg · Pexels: dumbbell training'],
+    'voeding'  => ['src' => 'assets/img/voeding.jpg', 'alt' => 'Gezonde maaltijd in een kom', 'zoek' => 'voeding.jpg · Unsplash: healthy meal bowl'],
+    'voortgang'=> ['src' => 'assets/img/voortgang.jpg', 'alt' => 'Sporter na een zware set', 'zoek' => 'voortgang.jpg · Pixabay: gym progress'],
+    'over'     => ['src' => 'assets/img/over.jpg', 'alt' => 'Training in de sportzaal', 'zoek' => 'over.jpg · Unsplash: gym training'],
+    'cta'      => ['src' => 'assets/img/cta.jpg', 'alt' => 'Sporter klaar om te starten', 'zoek' => 'cta.jpg · Pexels: athlete gym'],
 ];
 
 /* Drie kernfuncties op de homepagina */
