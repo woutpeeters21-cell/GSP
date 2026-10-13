@@ -28,11 +28,11 @@ $navigatie = [
  */
 $fotos = [
     'hero'     => ['src' => 'assets/img/hero.jpg', 'alt' => 'Sporter in een donkere gym klaar voor een deadlift', 'zoek' => 'hero.jpg · Unsplash: dark gym workout'],
-    'wat'      => ['src' => 'assets/img/wat.jpg', 'alt' => 'Sporter controleert zijn training', 'zoek' => 'wat.jpg · Unsplash: woman workout phone'],
+    'wat'      => ['src' => 'assets/img/wat.jpg', 'alt' => 'Sporter bekijkt haar routines in de app tussen de dumbbells', 'zoek' => 'wat.jpg · Unsplash: woman workout phone'],
     'training' => ['src' => 'assets/img/training.jpg', 'alt' => 'Sporter met twee dumbbells in een industriële gym', 'zoek' => 'training.jpg · Pexels: dumbbell training'],
     'voeding'  => ['src' => 'assets/img/voeding.jpg', 'alt' => 'Kipspiesjes op rijst in een witte schaal', 'zoek' => 'voeding.jpg · Unsplash: healthy meal bowl'],
     'voortgang'=> ['src' => 'assets/img/voortgang.jpg', 'alt' => 'Kettlebell van 50 lbs op de vloer van een gym', 'zoek' => 'voortgang.jpg · Pixabay: gym progress'],
-    'over'     => ['src' => 'assets/img/over.jpg', 'alt' => 'Training in de sportzaal', 'zoek' => 'over.jpg · Unsplash: gym training'],
+    'over'     => ['src' => 'assets/img/over.jpg', 'alt' => 'Rij dumbbells in een rek in de gym', 'zoek' => 'over.jpg · Unsplash: gym training'],
     'cta'      => ['src' => 'assets/img/cta.jpg', 'alt' => 'Sporter klaar om te starten', 'zoek' => 'cta.jpg · Pexels: athlete gym'],
 ];
 
